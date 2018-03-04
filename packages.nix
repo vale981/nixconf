@@ -52,10 +52,8 @@ let
     rofi
   ]);
 
-  games = (with stable; [
-    xonotic
-  ]) ++ (with edge; [
-    steam
+  games = (with edge; [
+    superTuxKart
   ]);
 
   development = (with stable; [
