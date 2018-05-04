@@ -1,5 +1,4 @@
 { config, pkgs, ...}:
-
 let
   nixcfg = {
     allowUnfree = true;
@@ -20,7 +19,9 @@ let
     xclip
     xst
     git
-    busybox
+    xkb_switch
+    alsaUtils
+    openssl
   ]) ++ (with rolling; [
     firefox
     thunderbird
@@ -28,6 +29,7 @@ let
     google-play-music-desktop-player
     file
     i3status-rust
+    udiskie
   ]);
 
   extra = (with rolling; [
@@ -40,7 +42,9 @@ let
     sassc
     librsvg
     bc
+    unison
 
+    redshift
     compton
     firefox
     gimp
@@ -50,9 +54,26 @@ let
     
     feh
     rofi
-  ]);
+    dunst
 
-  games = (with edge; [
+    anki
+    calibre
+    vlc
+
+    texlive.combined.scheme-full
+    gwenview
+
+    tdesktop
+
+    # Term Stuff
+    tree
+    todo-txt-cli
+    nox
+  ]) ++ (with edge; [
+  bitwig-studio
+  ]); 
+
+  games = (with rolling; [
     superTuxKart
   ]);
 
@@ -62,7 +83,10 @@ let
     automake
     boot
     cmake
-    gcc
+    ccache
+    clang
+    binutils
+    lld
     ghc
     gnumake
     rustc
